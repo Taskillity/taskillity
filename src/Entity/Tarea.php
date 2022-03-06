@@ -19,6 +19,10 @@ class Tarea
     #[ORM\Column(type: 'string', length: 150)]
     private $titulo;
 
+    #[ORM\ManyToOne(targetEntity: Usuario::class, inversedBy: 'tareas')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $usuario;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +48,18 @@ class Tarea
     public function setTitulo(string $titulo): self
     {
         $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    public function getUsuario(): ?Usuario
+    {
+        return $this->usuario;
+    }
+
+    public function setUsuario(?Usuario $usuario): self
+    {
+        $this->usuario = $usuario;
 
         return $this;
     }
