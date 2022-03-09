@@ -29,7 +29,7 @@ class UsuarioController extends AbstractController
     {
         $usuario = new Usuario();
         $form = $this->createFormBuilder($usuario)
-            ->add('nombre', TextType::class)
+            ->add('nombre', TextType::class) 
             ->add('apellidos', TextType::class)
             ->add('fechaNacimiento', TextType::class)
             ->add('nacionalidad', TextType::class)
