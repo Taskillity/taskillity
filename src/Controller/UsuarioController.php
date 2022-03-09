@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\{TextType, ButtonType, EmailType, HiddenType, PasswordType, TextareaType, SubmitType, NumberType, DateType, MoneyType, BirthdayType};
+
 
 #[Route('/usuario')]
 class UsuarioController extends AbstractController
@@ -26,7 +28,20 @@ class UsuarioController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $usuario = new Usuario();
-        $form = $this->createForm(UsuarioType::class, $usuario);
+        $form = $this->createFormBuilder($usuario)
+            ->add('nombre', TextType::class)
+            ->add('apellidos', TextType::class)
+            ->add('fechaNacimiento', TextType::class)
+            ->add('nacionalidad', TextType::class)
+            ->add('email', EmailType::class)
+            ->add('password', PasswordType::class)
+            ->add(
+                'save',
+                SubmitType::class,
+                array('label' => 'Registrar usuario')
+            )
+            ->getForm();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
