@@ -16,7 +16,7 @@
 				<h2 class="fw-bold text-center py-5">Bienvenido a Taskillity!</h2>
 
 				<!--LOGIN-->
-				<form method="POST" role="form" id="register-form" action="#">
+				<form method="POST" role="form" id="register-form" action="form.php">
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 					{% endif %}
@@ -42,7 +42,7 @@
 					</div>
 
 					<div class="d-grid">
-						<button type="submit" class="btn btn-primary">
+						<button type="submit" class="btn btn-primary" name="submit">
 							Iniciar Sesión
 						</button>
 					</div>
@@ -53,6 +53,7 @@
 						</span>
 					</div>
 				</form>
-            </div>
-        </div>
+			</div>
+		</div>
+
 	{% endblock %}
