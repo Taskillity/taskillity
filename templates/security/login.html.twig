@@ -1,26 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<style>
-body {
-    background: #01cbfd;
-    background: linear-gradient(to left, #cfcfcf, #01cbfd)
-}
-
-.bg {
-    background-image: url(/public/img/Taskillity.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-</style>
+<link href="{{ absolute_url(asset('styles/custom.css')) }}" rel="stylesheet" />
 {% endblock %}
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
 <div class="container bg-primary w-75 mt-5 mb-5 rounded shadow">
         <div class="row align-items-stretch">
-            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-
+            <div class="col d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded" id="centrador">
+            <img id="imagen" src="{{ absolute_url(asset('images/Taskillity.png')) }}"  alt="Taskillity Logo" />
             </div>
             <div class="col bg-white p-5 rounded-end">
                 <div class="text-end">

@@ -1,0 +1,17 @@
+body {
+    background: #01cbfd;
+    background: linear-gradient(to left, #cfcfcf, #01cbfd)
+}
+
+#centrador{
+    position: relative;
+  }
+  
+  #imagen{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+  }
