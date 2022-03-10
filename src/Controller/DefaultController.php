@@ -7,6 +7,8 @@ use Symfony\Component\BrowserKit\Request;
  * @Route("/eventos", name="eventos")
  * 
  */
+
+ 
 public function eventos(Request $request, CommonService $commonService)
 {
     $authcode = $request->get(key:"authcode");
@@ -21,7 +23,6 @@ public function eventos(Request $request, CommonService $commonService)
 
         'eventos' => $eventos,
         'authLink' => $authLink,
-
 
     ]);
 
