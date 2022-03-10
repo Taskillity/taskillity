@@ -106,8 +106,8 @@ Instalación:
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [Symfony](https://symfony.com/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [*](https://maven.apache.org/) - Manejador de dependencias
+* [*](https://rometools.github.io/rome/) - Usado para generar RSS
 
 
 ## Autores ✒️
