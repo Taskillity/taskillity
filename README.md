@@ -72,6 +72,7 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 
 PHP 8.1
 Instalación:
+
 1#
 ```
 sudo apt update; 
