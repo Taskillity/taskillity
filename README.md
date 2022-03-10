@@ -52,7 +52,12 @@ _Instalamos composer_
 ```
 composer install
 ```
-_Migrations_
+_Si no ha creado el .env_
+```
+DATABASE_URL="mysql://taskillity:taskillity@127.0.0.1:3306/taskillity?serverVersion=5.7"
+```
+
+_Después ejecutamos_
 ```
 php bin/console make:migration
 ```
@@ -68,6 +73,10 @@ _Que cosas necesitas para instalar el software y como instalarlas_
 ```
 Da un ejemplo
 ```
+
+
+
+
 
 ### Instalación 🔧
 
@@ -87,35 +96,12 @@ hasta finalizar
 
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Symfony](https://symfony.com/) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
