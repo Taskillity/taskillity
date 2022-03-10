@@ -98,7 +98,7 @@ Symfony 6
 
 Instalación:
 
-[Pasos Instalar Symfony](https://www.osradar.com/install-symfony-ubuntu-20-04/)
+[Guía Instalar Symfony](https://www.osradar.com/install-symfony-ubuntu-20-04/)
 
 ### Instalación 🔧
 
