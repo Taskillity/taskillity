@@ -103,7 +103,7 @@ Instalación:
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Herramientas utilizadas_
 
 * [Symfony](https://symfony.com/) - El framework web usado
 * [*](https://maven.apache.org/) - Manejador de dependencias
