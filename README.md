@@ -70,12 +70,28 @@ php bin/console doctrine:migrations:migrate
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
+PHP 8.1
+Instalación:
+1#
 ```
-Da un ejemplo
+sudo apt update; 
 ```
-
-
-
+2#
+```
+sudo apt upgrade
+```
+3#
+```
+sudo apt install ca-certificates apt-transport-https software-properties-common
+```
+4#
+```
+sudo add-apt-repository ppa:ondrej/php
+```
+5#
+```
+sudo apt install php8.1
+```
 
 
 ### Instalación 🔧
