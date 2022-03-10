@@ -68,7 +68,7 @@ php bin/console doctrine:migrations:migrate
 
 ### Pre-requisitos 📋
 
-_Requisitos y como instalarlos_
+_Requisitos y como instalarlos._
 
 PHP 8.1
 Instalación:
@@ -94,8 +94,11 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt install php8.1
 ```
 
+Symfony 6
 
+Instalación:
 
+[Pasos Instalar Symfony](https://www.osradar.com/install-symfony-ubuntu-20-04/)
 
 ### Instalación 🔧
 
