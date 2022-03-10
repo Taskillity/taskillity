@@ -129,7 +129,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 * **Christian Prieto Gómez** - [ChristianPrieto](https://github.com/ChristianPrieto)
 * **Francisco Veragua Cabrera** - [fco-veragua](https://github.com/fco-veragua)
 * **José Javier Gómez Jiménez** - [Joseja0202](https://github.com/Joseja0202)
-* **Oscar García Gómez** - [oscargargom](https://github.com/oscargargom)
+* **Oscar García Gómez** - [oscargargom](https://github.com/oscargargom)  | [oscargargom001](https://github.com/oscargargom001)
 
 
 
