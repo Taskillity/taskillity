@@ -128,10 +128,6 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
 
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
 ## Autores ✒️
 
 * **Christian Prieto Gómez** - [ChristianPrieto](https://github.com/ChristianPrieto)
