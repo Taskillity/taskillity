@@ -13,3 +13,7 @@ app_login:
 app_logout:
     path: /logout
     controller: App\Controller\ControladorSeguridadController::logout
+
+eventos:
+    path: /eventos
+    controller: App\Controller\DefaultController:eventos
