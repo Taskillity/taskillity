@@ -16,7 +16,7 @@
 				<h2 class="fw-bold text-center py-5">Bienvenido a Taskillity!</h2>
 
 				<!--LOGIN-->
-				<form method="POST" role="form" id="register-form" action="form.php">
+				<form method="POST" role="form" id="register-form" action="#">
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 					{% endif %}
