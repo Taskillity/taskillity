@@ -68,7 +68,7 @@ php bin/console doctrine:migrations:migrate
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Requisitos y como instalarlos_
 
 PHP 8.1
 Instalación:
@@ -93,6 +93,8 @@ sudo add-apt-repository ppa:ondrej/php
 ```
 sudo apt install php8.1
 ```
+
+
 
 
 ### Instalación 🔧
