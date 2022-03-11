@@ -106,7 +106,7 @@ Instalación:
 _Herramientas utilizadas_
 
 * [Symfony](https://symfony.com/) - El framework web usado
-* [*](https://maven.apache.org/) - *
+* [Bootstrap](https://getbootstrap.com/) - Biblioteca utilizada
 * [*](https://rometools.github.io/rome/) - *
 
 
