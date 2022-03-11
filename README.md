@@ -39,33 +39,6 @@ Proyecto colaborativo de DAW.
 
 _Aquí describimos el proyecto._
 
-## Comenzando 🚀
-
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-_Clonamos el proyecto_
-```
-git clone https://github.com/Taskillity/taskillity.git
-```
-
-_Instalamos dependencias con composer_
-```
-composer install
-```
-_Si no ha creado el .env_
-```
-DATABASE_URL="mysql://taskillity:taskillity@127.0.0.1:3306/taskillity?serverVersion=5.7"
-```
-
-_Después ejecutamos_
-```
-php bin/console make:migration
-```
-
-```
-php bin/console doctrine:migrations:migrate
-```
-
 ## Pre-requisitos 📋
 
 _Requisitos y como instalarlos._
@@ -101,6 +74,33 @@ Instalación:
 [Guía Instalar Symfony](https://www.osradar.com/install-symfony-ubuntu-20-04/)
 
 
+## Comenzando 🚀
+
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+
+_Clonamos el proyecto_
+```
+git clone https://github.com/Taskillity/taskillity.git
+```
+
+_Instalamos dependencias con composer_
+```
+composer install
+```
+_Si no ha creado el .env_
+```
+DATABASE_URL="mysql://taskillity:taskillity@127.0.0.1:3306/taskillity?serverVersion=5.7"
+```
+
+_Después ejecutamos_
+```
+php bin/console make:migration
+```
+
+```
+php bin/console doctrine:migrations:migrate
+```
+
 ## Construido con 🛠️
 
 _Herramientas utilizadas_
@@ -122,10 +122,6 @@ _Herramientas utilizadas_
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).
-
-
-
-
 
 
 
