@@ -106,8 +106,8 @@ Instalación:
 _Herramientas utilizadas_
 
 * [Symfony](https://symfony.com/) - El framework web usado
-* [*](https://maven.apache.org/) - Manejador de dependencias
-* [*](https://rometools.github.io/rome/) - Usado para generar RSS
+* [*](https://maven.apache.org/) - *
+* [*](https://rometools.github.io/rome/) - *
 
 
 ## Autores ✒️
