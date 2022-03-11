@@ -48,7 +48,7 @@ _Clonamos el proyecto_
 git clone https://github.com/Taskillity/taskillity.git
 ```
 
-_Instalamos composer_
+_Instalamos dependencias con composer_
 ```
 composer install
 ```
