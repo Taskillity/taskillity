@@ -3,17 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Usuario;
-use App\Form\UsuarioType;
-use App\Repository\UsuarioRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\{TextType, ButtonType, EmailType, HiddenType, PasswordType, TextareaType, SubmitType, NumberType, DateType, MoneyType, BirthdayType};
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Doctrine\Persistence\ManagerRegistry;
 
 
 #[Route('/usuario')]
@@ -46,7 +41,7 @@ class UsuarioController extends AbstractController
             $entityManager->persist($usuario);
             $entityManager->flush();
 
-            return $this->redirectToRoute('usuario_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('usuario/new.html.twig', [
