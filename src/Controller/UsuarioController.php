@@ -3,20 +3,25 @@
 namespace App\Controller;
 
 use App\Entity\Usuario;
+use ContainerVKVqKfU\getForm_FactoryService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\{TextType, ButtonType, EmailType, HiddenType, PasswordType, TextareaType, SubmitType, NumberType, DateType, MoneyType, BirthdayType};
-
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('/usuario')]
 class UsuarioController extends AbstractController
 {   
 
+    private $passwordHasher;
 
-
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+        $this->passwordHasher = $passwordHasher;
+    }
     #[Route('/new', name: 'usuario_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -35,9 +40,16 @@ class UsuarioController extends AbstractController
             )
             ->getForm();
 
-        $form->handleRequest($request);
+        $form->handleRequest($request);       
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $hashedPassword = $this->passwordHasher->hashPassword(
+                $usuario,
+                $usuario->getPassword()
+            );
+            $usuario->setPassword($hashedPassword); 
+
             $entityManager->persist($usuario);
             $entityManager->flush();
 
@@ -49,6 +61,4 @@ class UsuarioController extends AbstractController
             'form' => $form,
         ]);
     }
-
-    
 }

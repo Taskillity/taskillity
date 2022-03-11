@@ -1,0 +1,69 @@
+{{ form_start(form) }}
+<div class="mb-3">
+    {{ form_row(form.nombre, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.apellidos, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.fechaNacimiento, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.nacionalidad, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.email, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.password, {
+    label_attr: {
+        class: 'form-label'
+    },
+    attr: {
+        class: 'form-control'
+    }
+}) }}
+</div>
+<div class="d-grid">
+    {{ form_row(form.save, {
+    attr: {
+        class: 'col-12 btn btn-primary' 
+    }
+}) }}
+</div>
+{{ form_end(form) }}
