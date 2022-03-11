@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-	<link href="{{ absolute_url(asset('styles/login.css')) }}" rel="stylesheet"/>
-{% endblock %}
-{% block title %}Log in!
-{% endblock %}
 
+{% block title %}Welcome to Taskillity!
+{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('css/login.css') }}" rel="stylesheet"/>
+{% endblock %}
 {% block body %}
 	<div class="container bg-primary w-75 mt-5 mb-5 rounded shadow">
 		<div class="row align-items-stretch">
@@ -49,12 +49,11 @@
 					        </div>
 					    #}
 
-					<button class="btn btn-lg btn-primary" type="submit">
+					<button class="col-12 btn btn-lg btn-primary" type="submit">
 						Iniciar sesión
 					</button>
-                    <div class="col-12 my-3">
+                    <div class="col-12 text-center my-3">
                         <span>¿No tienes cuenta? <a href="#">Regístrate</a></span>
-                        <span><a href="#">Recuperar contraseña</a></span>
                     </div>
 				</form>
 			{% endblock %}

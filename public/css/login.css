@@ -1,3 +1,4 @@
+
 body {
     background: #01cbfd;
     background: linear-gradient(to left, #cfcfcf, #01cbfd)
@@ -10,9 +11,9 @@ body {
 }
 #centrador{
     position: relative;
-  }
+}
   
-  #imagen{
+#imagen{
       position: absolute;
       top: 0;
       left: 0;
