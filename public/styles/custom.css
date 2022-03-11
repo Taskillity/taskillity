@@ -1,0 +1,22 @@
+body {
+    background: #01cbfd;
+    background: linear-gradient(to left, #cfcfcf, #01cbfd)
+}
+
+.bg {
+    background-image: url('/public/img/Taskillity.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#centrador{
+    position: relative;
+  }
+  
+  #imagen{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+  }
