@@ -1,0 +1,43 @@
+
+
+.menu {
+    background-color: #000000 !important;
+
+}
+
+.img{
+    margin-right: 15px;
+}
+body{
+    background: #79e4ff!important;
+    background: linear-gradient(to left, #cfcfcf, #79e4ff)!important;
+}
+
+.tituloTarea{
+    font-weight: bold;
+    font-size: 40px;
+    text-decoration-line: underline;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.taskility{
+    text-align: center;
+}
+
+.contenidoMenu {
+    text-align: center;
+}
+
+.cards{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.menuDE{
+    text-align: center;
+}
+
+.scroll{
+    background-color:white!important;
+}
