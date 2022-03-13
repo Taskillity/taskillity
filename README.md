@@ -96,7 +96,7 @@ php bin/console doctrine:migrations:migrate
 
 ## Construido con 🛠️
 
-_Herramientas utilizadas_
+_Herramientas utilizadas._
 
 * [Symfony](https://symfony.com/) - El framework web usado.
 * [Bootstrap](https://getbootstrap.com/) - Biblioteca utilizada.
