@@ -108,7 +108,6 @@ _Herramientas utilizadas_
 
 * [Symfony](https://symfony.com/) - El framework web usado.
 * [Bootstrap](https://getbootstrap.com/) - Biblioteca utilizada.
-* [*](https://rometools.github.io/rome/) - *
 
 
 ## Autores ✒️
