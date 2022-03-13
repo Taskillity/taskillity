@@ -79,9 +79,11 @@ _Instalamos dependencias con composer_
 ```
 composer install
 ```
-_Si no ha creado el .env_
+_Archivo .env_
+_En este fichero debemos añadir una línea que indique a Symfony cómo conectar con la base de datos, especificando el usuario, la clave, el servidor, el puerto y el nombre de la base de datos:_
 ```
 DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
+DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 
 ```
 
