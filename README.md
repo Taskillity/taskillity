@@ -37,7 +37,7 @@ Proyecto colaborativo de DAW.
 
 # Taskillity
 
-_Aquí describimos el proyecto._
+_Taskillity es una web de administración de proyectos con interfaz web que, por medio de tareas permite organizar actividades, tanto para trabajos personales como también para trabajos colaborativos._
 
 ## Pre-requisitos 📋
 
@@ -89,7 +89,8 @@ composer install
 ```
 _Si no ha creado el .env_
 ```
-DATABASE_URL="mysql://taskillity:taskillity@127.0.0.1:3306/taskillity?serverVersion=5.7"
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
+
 ```
 
 _Después ejecutamos_
