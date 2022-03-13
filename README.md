@@ -27,14 +27,6 @@ Proyecto colaborativo de DAW.
 - [ ] __RA3__: Puesta en marcha de una empresa. Determinación del mercado, elementos de marketing, forma jurídica y obligaciones legales (Fase lV y V del plan de empresa) 
 - [ ] __RA4__: Gestión administrativa y económica-financiera (fase VI del proyecto de empresa). 
 
-### Participantes
-
-- Christian Prieto Gómez ► [ChristianPrieto](https://github.com/ChristianPrieto)
-- Francisco Veragua Cabrera ► [fco-veragua](https://github.com/fco-veragua)
-- José Javier Gómez Jiménez ► [Joseja0202](https://github.com/Joseja0202)
-- Oscar García Gómez ► [oscargargom](https://github.com/oscargargom)  
-
-
 # Taskillity
 
 _Taskillity es una web de administración de proyectos con interfaz web que, por medio de tareas permite organizar actividades, tanto para trabajos personales como también para trabajos colaborativos._
