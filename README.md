@@ -80,6 +80,7 @@ _Instalamos dependencias con composer_
 composer install
 ```
 _Archivo .env_
+
 _En este fichero debemos añadir una línea que indique a Symfony cómo conectar con la base de datos, especificando el usuario, la clave, el servidor, el puerto y el nombre de la base de datos:_
 
 _-Con mysql_
