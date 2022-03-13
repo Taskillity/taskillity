@@ -5,15 +5,3 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
-
-app_login:
-    path: /
-    controller: App\Controller\ControladorSeguridadController::login
-
-app_logout:
-    path: /logout
-    controller: App\Controller\ControladorSeguridadController::logout
-
-eventos:
-    path: /eventos
-    controller: App\Controller\DefaultController:eventos

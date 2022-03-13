@@ -1,4 +1,4 @@
-# taskillity
+# Taskillity
 Proyecto colaborativo de DAW.
 
 ## Requisitos Desarrollo en el Entorno Servidor
@@ -123,6 +123,3 @@ _Herramientas utilizadas._
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0).
-
-
-
