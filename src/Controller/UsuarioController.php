@@ -60,5 +60,19 @@ class UsuarioController extends AbstractController
             'usuario' => $usuario,
             'form' => $form,
         ]);
+
+        
+    }
+    /**
+
+    * @Route("/index", name="index")
+
+    */
+
+    public function principalAction(Request $request)
+
+    {
+        //aquí debe ir toda la lógica previa antes de renderizar a la template index.html.twig
+        return $this->render('index.php');
     }
 }
