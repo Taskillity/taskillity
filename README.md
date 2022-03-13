@@ -29,7 +29,7 @@ Proyecto colaborativo de DAW.
 
 # Taskillity
 
-_Taskillity es una web de administración de proyectos con interfaz web que, por medio de tareas permite organizar actividades, tanto para trabajos personales como también para trabajos colaborativos._
+_Taskillity es una web de administración de proyectos con interfaz web que, por medio de tareas permite organizar actividades, tanto para trabajos personales como también para trabajos colaborativos. Totalmente orientada a estudiantes de desarrollo._
 
 ## Pre-requisitos 📋
 
