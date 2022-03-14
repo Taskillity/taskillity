@@ -37,7 +37,6 @@ security:
     ## CONTROL DE ACCESO
     access_control:
         - { path: ^/api/tareas, roles: ROLE_ADMIN}
-        - { path: ^/api/tarea/, roles: ROLE_ADMIN}
 
 when@test:
     security:
