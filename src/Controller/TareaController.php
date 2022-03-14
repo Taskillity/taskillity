@@ -128,7 +128,7 @@ class TareaController extends AbstractController
 
     //Put tarea
     #[Route('/api/tarea/{id}', name: 'tarea_put', methods: ['PUT'])]
-    function putTweet(ManagerRegistry $doctrine,Request $request, $id) {
+    function putTarea(ManagerRegistry $doctrine,Request $request, $id) {
 
         $entityManager = $doctrine->getManager();
         $tarea = $entityManager->getRepository(Tarea::class)->find($id);
@@ -158,7 +158,7 @@ class TareaController extends AbstractController
 
     //Delete tarea
     #[Route('/api/tarea/{id}', name: 'tarea_delete', methods: ['DELETE'])]
-    function deleteTweet(ManagerRegistry $doctrine, $id) {
+    function deleteTarea(ManagerRegistry $doctrine, $id) {
 
         $entityManager = $doctrine->getManager();
         $tarea = $entityManager->getRepository(Tarea::class)->find($id);
