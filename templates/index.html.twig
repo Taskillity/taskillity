@@ -21,13 +21,6 @@
 			var url = "http://localhost:8000/";
 		</script>
 		<script src="/js/item-ajax.js"></script>
-		<script type="text/javascript">
-			$.get('/ruta/hasta/pagina.php', {
-articulo: '34'
-}, function (datos) {
-alert('Respuesta = ' + datos);
-});
-		</script>
 	</head>
 
 	<body>
@@ -43,7 +36,7 @@ alert('Respuesta = ' + datos);
 					<div class="collapse navbar-collapse" id="navbarScroll">
 						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 50px;">
 							<li class="nav-item">
-								<a class="nav-link active text-white " aria-current="page" href="#">Home</a>
+								<a class="nav-link active text-white " aria-current="page" href="{{path('index')}}">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link active text-white " aria-current=" page" href="{{path('app_contact')}}">Contact us</a>
@@ -60,12 +53,7 @@ alert('Respuesta = ' + datos);
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
 					<div class="pull-left">
-						<h2>PHP Jquery Ajax CRUD Example</h2>
-					</div>
-					<div class="pull-right">
-						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-item">
-							Create Item
-						</button>
+						<h2>Tasks list</h2>
 					</div>
 				</div>
 			</div>
@@ -77,8 +65,22 @@ alert('Respuesta = ' + datos);
 						<!-- <th width="200px">Action</th> -->
 					</tr>
 				</thead>
-				<tbody></tbody>
+				<tbody>
+
+				{% for tarea in app.user.tareas %}
+				<tr>
+					<td>{{ tarea.titulo }}</td>
+					<td>{{ tarea.descripcion }}</td>
+				</tr>
+				{% endfor %}
+				</tbody>
 			</table>
+
+			
+
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-item">
+					New Task
+			</button>
 
 			<ul id="pagination" class="pagination-sm"></ul>
 
@@ -156,21 +158,20 @@ alert('Respuesta = ' + datos);
 		</div>
 	</body>
 </html></div><script type="text/javascript">
-$(document).ready(function () {
-$('#btnguardar').click(function () {
-var datos = $('#newTarea').serialize();
-alert(datos);
-$.ajax({
-url: "{{ path('tarea_post') }}",
-type: 'POST',
-contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-
-data: datos,
-
-success: function (x) {
-alert("Tarea creada con éxito");
-}
-});
-return false;
-});
-});</script></body></html>
+		$(document).ready(function () {
+		//INSERTAR
+			$('#btnguardar').click(function () {
+			var datos = $('#newTarea').serialize();
+			$.ajax({
+				url: "{{ path('tarea_post') }}",
+				type: 'POST',
+				contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+				data: datos,
+				});
+			});
+		//READ
+		//UPDATE
+		//DELETE
+		
+	});
+</script></body></html>
