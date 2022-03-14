@@ -110,6 +110,8 @@ _Herramientas utilizadas._
 * [Symfony](https://symfony.com/) - El framework web usado.
 * [Bootstrap](https://getbootstrap.com/) - Biblioteca utilizada.
 
+## DESPLIEGUE ==> DESPLEGADA EN HEROKU
+[Taskillity](http://taskillity.herokuapp.com)
 
 ## Autores ✒️
 
