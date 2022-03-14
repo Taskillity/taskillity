@@ -40,9 +40,6 @@ class TareaController extends AbstractController
         return new JsonResponse($result);
     }
 
-
-
-
     // Get tareas
     #[Route('/api/tareas', name: 'tareas_get', methods: ['GET'])]
     function getTareas(ManagerRegistry $doctrine) : Response{
@@ -63,31 +60,6 @@ class TareaController extends AbstractController
             
         }
         return new JsonResponse($listaTareas);
-    }
-    //Get tareas
-    #[Route('/api/listaTareas/{idUsuario}', name: 'tareasById', methods: ['GET'])]
-    function getTareasById(ManagerRegistry $doctrine ,$idUsuario) : Response{
-
-    $entityManager = $doctrine->getManager();
-    $usuario = $entityManager->getRepository(Usuario::class)->find($idUsuario);
-
-
-    if ($usuario == null) {
-        return new JsonResponse([
-            'error' => 'User not found'
-        ], 404);
-    }
-
-    $result = new \stdClass();
-    $result->id = $usuario->getId();
-    $result->tareas = array();
-    foreach ($usuario->getTareas() as $tarea) {
-        $result->tareas[] = $this->generateUrl('tarea_get', [
-            'id' => $tarea->getId(),
-        ], UrlGeneratorInterface::ABSOLUTE_URL);
-    }
-
-    return new JsonResponse($result);
     }
 
 
@@ -122,10 +94,6 @@ class TareaController extends AbstractController
 
     }
 
-
-
-
-
     //Put tarea
     #[Route('/api/tarea/{id}', name: 'tarea_put', methods: ['PUT'])]
     function putTweet(ManagerRegistry $doctrine,Request $request, $id) {
@@ -151,10 +119,6 @@ class TareaController extends AbstractController
 
             return new JsonResponse($result);
     }
-
-
-
-
 
     //Delete tarea
     #[Route('/api/tarea/{id}', name: 'tarea_delete', methods: ['DELETE'])]

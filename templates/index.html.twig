@@ -57,12 +57,12 @@
 					</div>
 				</div>
 			</div>
-			<table class="table table-bordered bg-white">
+			<table class="table border border-dark bg-white">
 				<thead>
 					<tr>
 						<th>Title</th>
 						<th>Description</th>
-						<!-- <th width="200px">Action</th> -->
+						<th class="w-20">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -71,6 +71,14 @@
 				<tr>
 					<td>{{ tarea.titulo }}</td>
 					<td>{{ tarea.descripcion }}</td>
+					<td>
+					<button type="button" class="btn btn-warning actualizarTarea" data-toggle="modal" data-target="#edit-item" >
+					Update Task
+					</button>
+					<button type="button" class="btn btn-danger borrarTarea" data-tarea="{{tarea.id}}" data-toggle="modal" data-target="#delmodalA" >
+					Delete Task
+					</button>
+					</td>
 				</tr>
 				{% endfor %}
 				</tbody>
@@ -129,11 +137,10 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">×</span>
 						</button>
-						<h4 class="modal-title" id="myModalLabel">Edit Item</h4>
 					</div>
 
 					<div class="modal-body">
-						<form data-toggle="validator" action="api/update.php" method="put">
+						<form data-toggle="validator" method="put" id="updateTask">
 							<input type="hidden" name="id" class="edit-id">
 
 							<div class="form-group">
@@ -149,28 +156,64 @@
 							</div>
 
 							<div class="form-group">
-								<button type="submit" class="btn btn-success crud-submit-edit">Submit</button>
+								<button type="submit" class="btn btn-success crud-submit-edit">Update</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		{# MOdal #}
+		<div class="modal fade" id="delmodalA" tabindex="-1" role="dialog" aria-labelledby="delmodalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    &iquest;Seguro que desea eliminar el registro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="aceptarModal" class="btn btn-dark text-white" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="cancelarModal" class="btn btn-danger" onClick="javascript:send_delA();">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 	</body>
 </html></div><script type="text/javascript">
 		$(document).ready(function () {
 		//INSERTAR
 			$('#btnguardar').click(function () {
-			var datos = $('#newTarea').serialize();
-			$.ajax({
-				url: "{{ path('tarea_post') }}",
-				type: 'POST',
-				contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-				data: datos,
+				var datos = $('#newTarea').serialize();
+				$.ajax({
+					url: "{{ path('tarea_post') }}/"+,
+					type: 'POST',
+					contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+					data: datos,
 				});
 			});
-		//READ
+
+$('.actualizarTarea').click(function () {
+     alert("ko")
+	 // Personalizar el modal:
+	 //   - Cambiar el input del título por el título de la tarea
+	 //   - Cambiar el input de la descripción por la descripción de la tarea
+	 //   - Ponerle al campo del update un data-tarea con el id de la tarea
+
+			});
+
+$('.borrarTarea').click(function () {
+     var idTarea = $(this).data('tarea');
+	 alert (idTarea)
+	 			/*	$.ajax({
+					url: "{{ path('tarea_post') }}",
+					type: 'POST',
+					contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+					data: datos,
+				});*/
+			});
+
+
 		//UPDATE
+			
 		//DELETE
 		
 	});
