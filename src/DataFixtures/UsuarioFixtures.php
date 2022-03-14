@@ -28,7 +28,18 @@ class UsuarioFixtures extends Fixture
             'prueba'
         );
         $usuario->setPassword($hashedPassword);
+        $manager->persist($usuario);
 
+        $usuario = new Usuario();
+        $usuario->setEmail('ADMIN@gmail.com');
+        $usuario->setNombre('admin');
+        $usuario->setApellidos('admin');
+        $hashedPassword = $this->passwordHasher->hashPassword(
+            $usuario,
+            'admin'
+        );
+        $usuario->setPassword($hashedPassword);
+        $usuario->setRoles(array("ROLE_ADMIN"));
         $manager->persist($usuario);
 
         $tarea = new Tarea();

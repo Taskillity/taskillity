@@ -49,7 +49,7 @@ class UsuarioController extends AbstractController
                 $usuario->getPassword()
             );
             $usuario->setPassword($hashedPassword); 
-
+            
             $entityManager->persist($usuario);
             $entityManager->flush();
 
