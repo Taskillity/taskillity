@@ -60,5 +60,32 @@ class UsuarioController extends AbstractController
             'usuario' => $usuario,
             'form' => $form,
         ]);
+
+        
+    }
+    /**
+
+    * @Route("/index", name="index")
+
+    */
+
+    public function principalAction(Request $request)
+
+    {
+        //aquí debe ir toda la lógica previa antes de renderizar a la template index.html.twig
+        return $this->render('index.html.twig');
+    }
+
+    /**
+
+    * @Route("/usuario/contact", name="app_contact")
+
+    */
+
+    public function principalAction2(Request $request)
+
+    {
+        //aquí debe ir toda la lógica previa antes de renderizar a la template formulario.html.twig
+        return $this->render('formulario.html.twig');
     }
 }

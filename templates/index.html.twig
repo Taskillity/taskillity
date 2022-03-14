@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Your tasks</title>
+
+		{% block stylesheets %}
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+			<link href="{{ absolute_url(asset('css/index.css')) }}" rel="stylesheet"/>
+		{% endblock %}
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.3.1/jquery.twbsPagination.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+		<script type="text/javascript">
+			var url = "http://localhost:8000/";
+		</script>
+		<script src="/js/item-ajax.js"></script>
+	</head>
+
+	<body>
+		<!--Menu-->
+		<header>
+			<nav class="navbar navbar-expand-lg nabvar-dark menu">
+				<div class="container">
+					<img class="img" src="{{ absolute_url(asset('images/Taskillity.png')) }}" width="50" height="50">
+
+					<a class="navbar-brand text-white " href="#">{{app.user.nombre}}</a>
+					<button class="navbar-toggler scroll" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+					<div class="collapse navbar-collapse" id="navbarScroll">
+						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 50px;">
+							<li class="nav-item">
+								<a class="nav-link active text-white " aria-current="page" href="{{path('index')}}">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active text-white " aria-current=" page" href="{{path('app_contact')}}">Contact us</a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link active text-white " aria-current="page" href="{{path('app_logout')}}">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 margin-tb">
+					<div class="pull-left">
+						<h2>Tasks list</h2>
+					</div>
+				</div>
+			</div>
+			<table class="table table-bordered bg-white">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Description</th>
+						<!-- <th width="200px">Action</th> -->
+					</tr>
+				</thead>
+				<tbody>
+
+				{% for tarea in app.user.tareas %}
+				<tr>
+					<td>{{ tarea.titulo }}</td>
+					<td>{{ tarea.descripcion }}</td>
+				</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+
+			
+
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-item">
+					New Task
+			</button>
+
+			<ul id="pagination" class="pagination-sm"></ul>
+
+			<!-- Create Item Modal -->
+			<div class="modal fade" id="create-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+
+						<div class="modal-body">
+							<form data-toggle="validator" method="POST" id="newTarea">
+								<div class="form-group">
+									<label class="control-label" for="title">Title:</label>
+									<input type="text" name="titulo" class="form-control" data-error="Please enter title." required/>
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="title">Description:
+									</label>
+									<textarea name="descripcion" class="form-control" data-error="Please enter description." required></textarea>
+									<div class="help-block with-errors"></div>
+								</div>
+
+								<input type="hidden" name="id" value="{{app.user.id}}"></input>
+
+							<div class="form-group">
+								<button type="submit" id="btnguardar" class="btn crud-submit btn-success">Submit</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Edit Item Modal -->
+		<div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Edit Item</h4>
+					</div>
+
+					<div class="modal-body">
+						<form data-toggle="validator" action="api/update.php" method="put">
+							<input type="hidden" name="id" class="edit-id">
+
+							<div class="form-group">
+								<label class="control-label" for="title">Title:</label>
+								<input type="text" name="titulo" class="form-control" data-error="Please enter title." required/>
+								<div class="help-block with-errors"></div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label" for="title">Description:</label>
+								<textarea name="descripcion" class="form-control" data-error="Please enter description." required></textarea>
+								<div class="help-block with-errors"></div>
+							</div>
+
+							<div class="form-group">
+								<button type="submit" class="btn btn-success crud-submit-edit">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html></div><script type="text/javascript">
+		$(document).ready(function () {
+		//INSERTAR
+			$('#btnguardar').click(function () {
+			var datos = $('#newTarea').serialize();
+			$.ajax({
+				url: "{{ path('tarea_post') }}",
+				type: 'POST',
+				contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+				data: datos,
+				});
+			});
+		//READ
+		//UPDATE
+		//DELETE
+		
+	});
+</script></body></html>
