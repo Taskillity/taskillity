@@ -33,9 +33,6 @@
                 </div>
             </div>
         </div>
-        <h1><?php
-            $this->getUser()->getId();
-            ?></h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -73,7 +70,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
 
-                            <input type="hidden" name="usuario_id"></input>
+                            <input type="hidden" name="usuario_id" value=""></input>
 
                             <div class="form-group">
                                 <button type="submit" id="btnguardar" class="btn crud-submit btn-success">Submit</button>
@@ -126,7 +123,7 @@
                 alert(datos);
                 $.ajax({
                     type: "POST",
-                    url: "{{ absolute_url('/servicios/insertarTarea.php')}}",
+                    url: "{{ absolute_url('/api/tareas')}}",
                     data: datos,
 
                     success: function(x) {
@@ -135,7 +132,6 @@
                         } else {
                             alert("Fallo en el servidor");
                         }
-
                     }
                 });
                 return false;

@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 
@@ -43,7 +44,7 @@ class TareaController extends AbstractController
 
 
     // Get tareas
-    #[Route('/api/tarea', name: 'tareas_get', methods: ['GET'])]
+    #[Route('/api/tareas', name: 'tareas_get', methods: ['GET'])]
     function getTareas(ManagerRegistry $doctrine) : Response{
 
         $entityManager = $doctrine->getManager();
@@ -63,7 +64,31 @@ class TareaController extends AbstractController
         }
         return new JsonResponse($listaTareas);
     }
+    //Get tareas
+    #[Route('/api/listaTareas/{idUsuario}', name: 'tareasById', methods: ['GET'])]
+    function getTareasById(ManagerRegistry $doctrine ,$idUsuario) : Response{
 
+    $entityManager = $doctrine->getManager();
+    $usuario = $entityManager->getRepository(Usuario::class)->find($idUsuario);
+
+
+    if ($usuario == null) {
+        return new JsonResponse([
+            'error' => 'User not found'
+        ], 404);
+    }
+
+    $result = new \stdClass();
+    $result->id = $usuario->getId();
+    $result->tareas = array();
+    foreach ($usuario->getTareas() as $tarea) {
+        $result->tareas[] = $this->generateUrl('tarea_get', [
+            'id' => $tarea->getId(),
+        ], UrlGeneratorInterface::ABSOLUTE_URL);
+    }
+
+    return new JsonResponse($result);
+    }
 
 
 
@@ -87,8 +112,13 @@ class TareaController extends AbstractController
         $entityManager->persist($tarea);
         $entityManager->flush();
         
+        $result = new \stdClass();
+        $result->id = $tarea->getId();
+        $result->titulo = $tarea->getTitulo();
+        $result->descripcion = $tarea->getDescripcion();
+        $result->usuario = $tarea->getUsuario()->getId();
 
-        return new JsonResponse($tarea);
+        return new JsonResponse($result);
 
     }
 
